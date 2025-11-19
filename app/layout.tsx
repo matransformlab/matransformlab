@@ -42,14 +42,9 @@ export default function RootLayout({
     </html>
   )
 }
-
 function ScrollToTopButton() {
   return (
-    <div 
-      className="scroll-to-top" 
-      onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-      aria-label="Scroll to top"
-    >
+    <div className="scroll-to-top">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
         <path d="M18 15l-6-6-6 6"/>
       </svg>
