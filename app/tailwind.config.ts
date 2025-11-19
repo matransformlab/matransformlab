@@ -16,21 +16,6 @@ const config: Config = {
         'orange-primary': '#f97316',
         'green-emerald': '#10b981',
       },
-      animation: {
-        'twinkle': 'twinkle 3s infinite',
-        'counter': 'counter 2s ease-out forwards',
-        'glow': 'glow 2s ease-in-out infinite alternate',
-      },
-      keyframes: {
-        twinkle: {
-          '0%, 100%': { opacity: '0.3' },
-          '50%': { opacity: '0.9' },
-        },
-        glow: {
-          '0%': { boxShadow: '0 0 5px rgba(139, 92, 246, 0.5)' },
-          '100%': { boxShadow: '0 0 20px rgba(139, 92, 246, 0.8)' },
-        },
-      },
     },
   },
   plugins: [],
