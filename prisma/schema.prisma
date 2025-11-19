@@ -1,0 +1,30 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+// User system
+model User {
+  id            String    @id @default(uuid())
+  email         String    @unique
+  name          String?
+  createdAt     DateTime  @default(now())
+  
+  // Simple schema for now - we'll expand later
+  @@map("users")
+}
+
+// Products
+model Product {
+  id          String   @id @default(uuid())
+  name        String
+  description String
+  price       Int      // In cents
+  createdAt   DateTime @default(now())
+  
+  @@map("products")
+}
