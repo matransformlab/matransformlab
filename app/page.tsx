@@ -1,65 +1,43 @@
-import Image from "next/image";
+import HeroSection from './components/HeroSection'
+import Starfield from './components/Starfield'
+import ColorTransition from './components/ColorTransition'
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+    <>
+      <Starfield />
+      <main className="relative">
+        {/* HERO - Pure Black */}
+        <section id="hero" className="min-h-screen bg-black-pure relative overflow-hidden section-transition">
+          <HeroSection />
+        </section>
+
+        {/* FREE RESOURCES - Dark Purple */}
+        <section id="resources" className="min-h-screen bg-[#1a0a2e] section-transition py-20 px-4">
+          <ColorTransition targetColor="#1a0a2e" />
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-gold-primary text-center mb-12">Free Sovereignty Resources</h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="glass-panel rounded-2xl p-6 box-light">
+                <h3 className="gradient-text-purple-gold">Identity Clarity Workbook</h3>
+                <p>47-page strategic framework to define your sovereign self</p>
+                <a className="gumroad-button" href="https://gumroad.com/l/your-free-resource">
+                  Download Free
+                </a>
+              </div>
+              <div className="box-dark rounded-2xl p-6">
+                <h3 className="gradient-text-blue-gold">AI Boundary Builder</h3>
+                <p>Free assessment tool for personal boundary engineering</p>
+                <button className="w-full mt-4 bg-blue-primary text-white py-2 rounded-lg hover:bg-blue-500 transition">
+                  Access Tool
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Add the rest of Kimi's sections here... */}
       </main>
-    </div>
-  );
+    </>
+  )
 }
